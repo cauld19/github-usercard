@@ -4,16 +4,6 @@
 */
 
 
-
-
-    // makeGitCard = async (data) => {
-    //   try {
-    //     let res = await axios.get(data);
-    //     entryPoint.appendChild(createComponent(response.data));
-
-    //   }
-    // }
-
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
@@ -100,6 +90,7 @@ function createComponent (dataInfo) {
   userName.textContent = dataInfo.login;
   location.textContent = `Location: ${dataInfo.location}`;
   profile.textContent = 'Profile: ';
+  profile.appendChild(profileLink);
   profileLink.textContent = dataInfo.html_url;
   profileLink.href = dataInfo.html_url;
   followers.textContent = `Followers: ${dataInfo.followers}`;
@@ -109,7 +100,6 @@ function createComponent (dataInfo) {
   //apply styles
 
   card.classList.add('card');
-  image.classList.add('img');
   name.classList.add('name');
   userName.classList.add('username');
 
